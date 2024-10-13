@@ -17,22 +17,24 @@
                 <p class=""></p>
             </div>
             <div class="navbar-links">
-                <a href="#">Sobre Mi</a>
-                <a href="#">Proyectos</a>
-                <a href="#">Habilidades</a>
-                <a href="#">Contácteme</a>
+                <a href="#tituloSobreMi">Sobre Mi</a>
+                <a href="#tituloSobreProyecto">Proyectos</a>
+                <a href="#tituloSobreHabilidades">Habilidades</a>
+                <a href="#tituloSobreContactame">Contácteme</a>
             </div>
         </nav>
     </header>
     <main>
         <div class="banner-inicial" id="banner-inicial">
             <!-- poner Bienvenido y fecha -->
-            <img class="montanas" src="./img/montañas-removebg-preview.png" alt="montañas">
+            <img class="frente" id="frente" src="./img/frente.png" alt="paisaje">
+            <img class="medio" id="medio" src="./img/intermedio.png" alt="paisaje">
             <img class="luna" id="luna" src="./img/luna.png" alt="luna">
+            <h1 id="bienvenida">Bienvenido</h1>
         </div>
 
         <!-- SECCION SOBRE MI -->
-        <div class="tituloSobreMi">
+        <div class="tituloSobreMi" id="tituloSobreMi">
             <p class="sobreMiTitulo">SOBRE MI</p>
         </div>
         
@@ -72,7 +74,7 @@
         </div>
 
         <!-- SECCION PROYECTOS -->
-        <div class="tituloProyecto">
+        <div class="tituloProyecto" id="tituloSobreProyecto">
             <p class="proyectosTitulo">PROYECTOS</p>
         </div>
         <div class="proyectos" id="proyectos">
@@ -179,7 +181,7 @@
         </div>
 
         <!-- SECCION HABILIDADES -->
-        <div class="tituloHabilidades">
+        <div class="tituloHabilidades" id="tituloSobreHabilidades">
             <p class="habilidades">HABILIDADES</p>
         </div>
         <div class="contenedorHabilidades">
@@ -189,9 +191,10 @@
                     Cada día es una oportunidad para combinar mi amor por el desarrollo de software con la emoción de nuevas experiencias, 
                     creando un camino lleno de posibilidades infinitas. 
                 </p>
+                <button id="btnhabilidad" class="verMas"><a><span>Mas Habilidades</span></a></button>
             </div>
             <div class="metricas">
-                <div class="habilidades">
+                <div class="habilidades habi">
                     <h2>HTML</h2>
                     <div class="barra">
                         <div class="html">
@@ -235,15 +238,106 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="btnLado">
+                    <img title="Click Sobre Mi" class="fl" src="./img/fl.png" alt="voltear carta">
+                </div>
             </div>
-
+            <div class="oculto">
+                <div class="habilidadesOcultas">
+                    <h2>Trabajo En Equipo</h2>
+                    <div class="barra">
+                        <div class="equipo">
+                            <span>90%</span>
+                        </div>
+                    </div>
+                    <h2>Responsabilidad</h2>
+                    <div class="barra">
+                        <div class="responsabilidad">
+                            <span>95%</span>
+                        </div>
+                    </div>
+                    <h2>Comunicación</h2>
+                    <div class="barra">
+                        <div class="comunicacion">
+                            <span>89%</span>
+                        </div>
+                    </div>
+                    <h2>Persistencia</h2>
+                    <div class="barra">
+                        <div class="persistencia">
+                            <span>98%</span>
+                        </div>
+                    </div>
+                    <h2>Gestión Tiempo</h2>
+                    <div class="barra">
+                        <div class="tiempo">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                    <h2>Atención al Detalle</h2>
+                    <div class="barra">
+                        <div class="detalle">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                    <h2>Adaptabilidad</h2>
+                    <div class="barra">
+                        <div class="adaptabilidad">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="btnLadoOculto">
+                    <img class="flOculto" src="./img/rotate_10629184.png" alt="voltear carta">
+                </div> -->
+            </div>
         </div>
 
-
-
-        <div><p style="height: 200vh;"></p></div>
+        <!-- SECCION CONTACTAME -->
+        <div class="tituloContactame" id="tituloSobreContactame">
+            <p class="contactame">CONECTEMOS</p>
+        </div>
+        <div class="contenedorFormulario">
+            <div class="con"><p>Contacta<span>Me</span></p></div>
+            <div class="formulario">
+                <form method="POST" action="https://formspree.io/f/xzzbbdry">
+                    <label id="nombre" for="labelNombre" name="labelNombre" required>Nombre</label>
+                    <input id="textnombre" type="text">
+                    <label id="correo" for="labelCorreo" required>Asunto</label>
+                    <input id="textcorreo" type="text" name="correo" id="inputCorreo">
+                    <label id="msn" for="labelMensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+                    <button class="verMas" type="submit"><span>Enviar</span></button>
+                </form>
+            </div>
+            <div class="enlaces">
+                <img id="imgC" src="./img/img_contact.png" alt="">
+                <div class="linksC">
+                    <a title="Linkedin" href="https://www.linkedin.com/in/eduard-andres-idrobo/"><img class="iconC"  src="./img/linkedin.png" alt=""></a>
+                    <a title="Github" href="https://github.com/3duard89"><img class="iconC"  src="./img/github.png" alt=""></a>
+                    <a title="Whatsapp" href="https://wa.me/573506537129?text=Tu%20mensaje%20aqui" target="_blank"><img class="iconC"  src="./img/wh.png" alt=""></a>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- SECCION FOOTER -->
+     <footer>
+        <div class="der">
+            <div class="uno"></div>
+            <div class="dos"></div>
+            <div class="tres"></div>
+        </div>
+        <div class="centro">
+            <p>Creado & Diseñado Por Eduard Idrobo</p>
+            <p>Codificando Sueños</p>
+        </div>
+        <div class="der">
+            <div class="uno"></div>
+            <div class="dos"></div>
+            <div class="tres"></div>
+        </div>
+     </footer>
 
 
     <script src="./script/script.js"></script>

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "kanit", sans-serif;
+    font-family: "Matemasie", sans-serif;
     font-weight: 600;
 }
 
@@ -11,6 +11,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* fuente */
 .kanit-semibold {
     font-family: "Kanit", sans-serif;
     font-weight: 600;
@@ -21,7 +22,7 @@
     font-family: "Matemasie", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
   
 body{
     background-color: #222222;
@@ -33,9 +34,8 @@ body{
 .navbar {
     width: 100%;
     height: 80px;
-    border-bottom: 1px ridge white;
-    background-color: rgba(255, 255, 255, 0.15);
-    font-size: 17px;
+    background-color: rgba(0, 0, 0, 0.466);
+    font-size: 18px;
     letter-spacing: 0.6px;
     display: flex;
     justify-content: space-between;
@@ -47,6 +47,7 @@ body{
     z-index: 1000; /* sobrepuesto en todo */
 }
 
+/* blur */
 .navbar.scroll {
     backdrop-filter: blur(6px); /* Efecto de blur al hacer scroll */
 }
@@ -55,15 +56,18 @@ body{
     padding-left: 20px;
 }
 
+/* tamaño logo */
 .navbar-nombre .logoEdd {
     height: 70px;
 }
 
+/* centrados en sus div */
 .navbar-nombre,
 .navbar-links{
     place-content: center;
 } 
 
+/* estilos links a */
 .navbar-links a{
     text-decoration: none;
     position: relative;
@@ -87,38 +91,67 @@ body{
 /* el tamaño de la linea y movimiento */
 .navbar-links a:hover::after {
     width: 80%;
-    left: 50%;
     transform: translateX(-50%);
 }
 
 
 /* fondo principal */
 .banner-inicial {
-    background-image: url("../img/mountain-silhouette-light-trails-long-exposure-astronomy-3840x2160-4380.jpg");
-    height: 130vh;
+    background-image: url("../img/sky-night-star-cosmos-atmosphere-darkness-785598-pxhere.com.jpg");
+    height: 120vh;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     transition: filter 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+    overflow: hidden;
+    perspective: 1000px;
 }
 
-.montanas {
-    position:absolute;
+.frente {
+    position: absolute;
+    bottom: -30px;
     width: 100%;
-    height: 560px;
-    top:224px;
-    z-index: 2;
+    height: 120vh;
+    z-index: 5;
+    transform: translate(0, 0) rotate(0deg);
+    transition: transform 0.5s ease-out; /* Transición suave */
 }
 
+.medio {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    transform: translate(0, 0) rotate(0deg);
+    transition: transform 0.5s ease-out; /* Transición suave */
+}
+
+/* estilo luna movimiento y posicion */
 .luna {
     position: absolute;
     top: 100px;
-    left: 600px;
+    left: 700px;
     transform: translate(0, 0) rotate(0deg);
-    transition: transform 0.4s ease; /* Transición suave */
+    transition: transform 0.5s ease-out; /* Transición suave */
 }
 
-.contenedorHabilidades,
+/* titulo Bienvenido posicion */
+.banner-inicial #bienvenida{
+    position: absolute;
+    left: 400px;
+    top: 300px;
+    font-size: 90px;
+    color: white;
+    z-index: 4;
+    transform: translateY(0) rotate(0deg);
+    transition: transform 1s ease-out;
+
+}
+
+/* estilo externo contenedor 2 colums */
 .contenedorSobreMi {
     width: 100%;
     height: auto;
@@ -129,6 +162,7 @@ body{
    
 }
 
+/* lado izq y visible */
 .sobreMi {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -136,8 +170,10 @@ body{
     visibility: visible;
     opacity: 1;
     transition: opacity 500ms ease;
+    font-size: 22px;
 }
 
+/* estilo posicion y visible */
 .card {
     grid-column: 2/3;
     grid-row: 1/2;
@@ -149,16 +185,21 @@ body{
     transition: opacity 500ms ease;
 }
 
+/* estilo mas info hidden inicialmente oculto */
 .masSobreMi {
     grid-column: 1/3;
     grid-row: 1/2;
     padding: 40px 0;
     opacity: 0;
-    transition: opacity 500ms ease;
+    transition: opacity 800ms ease;
     visibility: hidden;
 }
 
+.masSobreMi p{
+    font-size: 22px;
+}
 
+/* estilo border tamaños */
 .card .contenido {
     border: 1px solid rgba(236, 63, 241, 0.562);
     width: 350px;
@@ -172,17 +213,26 @@ body{
     background-attachment: fixed;
     border-radius: 20px;
 }
+
+/* estilo avatar */
 .card img{
     border-radius: 50%;
     width: 250px;
     margin-top: 15px;
 }
 
+/* estilo etiqueta p dentro botones tamaño y color */
+.misH .verMas a,
+.enlaces .verMas a,
 .links .verMas a,
 .proyectos .verMas a{
-    font-size: 25px;
+    font-size: 20px;
     color: white;
-    font-weight: 700;
+    font-weight: 400;
+}
+
+.proyectos h1{
+    font-size: 28px;
 }
 
 /* sobreMi transicion */
@@ -198,21 +248,22 @@ body{
 }
 
 
-
-
 /* Estilos Botones */
+.misH .verMas,
+.formulario .verMas,
+.enlaces .verMas,
 .masSobreMi .verMas,
 .links .verMas,
 .sobreMi .verMas,
 .ocultoD .verMas,
 .ocultoD2 .verMas {
     
-    font-size: 25px;
+    font-size: 20px;
     background: rgba(255, 255, 255, 0.082);
     color: white;
     border: 1px ridge white;
-    font-weight: 700;
-    padding: 0 10px;
+    font-weight: 400;
+    padding: 10px 30px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
@@ -222,17 +273,19 @@ body{
 
 }
 
-/* Propiedad Para  desplazar linealmente*/
+/* Propiedad Para desplazar linealmente*/
 .links a span,
 .verMas span {
     display: inline-block;
 }
 
+/* relaciono animacion de movimeinto infinito lineal */
 .links a:hover span,
 .verMas:hover span {
     animation: scroll-text 2s linear infinite;
 }
 
+/* animacion inicialmente a la izd se traslada 100% hasta llegar al extremo opuesto */
 @keyframes scroll-text {
     0% {
         transform: translateX(100%);
@@ -242,25 +295,24 @@ body{
     }
 }
 
+
+/* estilos titulos contenedor */
+.tituloContactame,
 .tituloHabilidades,
 .tituloSobreMi,
 .tituloProyecto {
     width: 100%;
     height: 80px;
     background-color: #9b9a9a1c;
-    box-shadow: 1px 0 20px #f5eee6;
+    box-shadow: 1px 0 10px #f5eee6;
     place-content: center;
     text-align: center;
-    font-size: 40px;
+    font-size: 34px;
 }
 
 
+/* estilos contenedor de proyectos filas y columnas */
 .proyectos{
-    background-image: url("../img/sky-night-star-cosmos-atmosphere-darkness-785598-pxhere.com.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     position: relative;
     display: grid;
     justify-content: space-evenly;
@@ -270,6 +322,7 @@ body{
     padding: 40px 40px;
 }
 
+/* imagen de proyecto tamaño redondes  */
 .proyectos img{
     height: 300px;
     width: 550px;
@@ -278,6 +331,7 @@ body{
     object-fit: cover;
 }
 
+/* posicion a los proyectos dentro de mi grid */
 .proyectoI {
     grid-row: 1/1;
     grid-column: 1/2;
@@ -293,7 +347,7 @@ body{
     grid-column: 1/2;
 }
 
-
+/* capa de transparencia fija del tamaño de la imagen */
 .proyectos .capa {
     width: 100%;
     height: 100%;
@@ -306,6 +360,7 @@ body{
     transition: visibility 0s, opacity 500ms ease-in;
 }
 
+/* capa donde se establecen los botones de progreso */
 .contenedorP { 
     width: 100%;
     height: 100%;
@@ -317,6 +372,7 @@ body{
     transform: translateY(70px);
 }
 
+/* base boton progreso tamaño redondes */
 .contenedorP .circulo {
     position: relative;
     display: flex;
@@ -328,6 +384,7 @@ body{
     border-radius: 50%;
 }
 
+/* se establece un borde interno  */
 .contenedorP .circulo::before {
     content: "";
     position: absolute;
@@ -338,6 +395,7 @@ body{
     z-index: 0;
 }
 
+/* se establecen 3 sombras internas  */
 .contenedorP .circulo::after {
     content: "";
     position: absolute;
@@ -354,7 +412,7 @@ body{
     z-index: 0;
 } 
 
-
+/* estilos del numero */
 .contenedorP .circulo .number {
     position: relative;
     color: #fff;
@@ -363,10 +421,12 @@ body{
     font-size: 1.5em;
 }
 
+/* se estable tamaño para el % */
 .contenedorP .circulo .number span {
     font-size: 0.5em;
 }
 
+/* se establece tamaño nombre html css js */
 .contenedorP .circulo h4 {
     position: relative;
     color: #fff;
@@ -405,36 +465,39 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     animation-fill-mode: both;
 }
 
-
+/* estilos para los textos descriptivos de las imagenes */
 .ocultoD,
 .ocultoI,
 .ocultoD2 {
     align-self: center;
-    font-size: 20px;
+    font-size: 22px;
     color: #f5eee6;
 }
 
+/* alineacion derecha el texto */
 .ocultoI {
     text-align: right;
 }
 
+/* estilos botones proyectos lado izquierdo */
 .ocultoI .verMas{
-    font-size: 25px;
+    font-size: 22px;
     background: rgba(255, 255, 255, 0.082);
     color: white;
-    padding: 0 10px;
     border: 1px ridge white;
-    font-weight: 700;
+    font-weight: 400;
     overflow: hidden;
     cursor: pointer;
     position: relative;
     border-radius: 10px;
     margin-top: 20px;
     margin-top: 20px;
+    padding: 10px 30px;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.253);
 
 }
 
+/* adaptando a imagne seguido de su descripcion */
 @media (width < 800px){
         
     .proyectos{
@@ -474,36 +537,97 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
 
 }
 
-
-.metricas{
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+/* se establecen dos columnas  */
+.contenedorHabilidades{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    font-size: 24px;
+    justify-content: space-evenly;
+    margin-block: 50px;
 }
 
+/* estilos contenedor barras progreso */
+.metricas{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: #333;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 20px #fff;
+    width: 90%;
+    align-items: center;
+    position: relative;
+}
+
+/* ajustado a la izquierda */
+.misH {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 90%;
+    height: auto;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 22px;
+}
+
+/* se muestran en columna y visible inicialmente */
 .metricas .habilidades {
+    padding-top: 20px;
     font-size: 12px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     text-align: left;
-    padding-left: 50px;
+    padding-left: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
+/* contenedor donde se establecen las habilidades blandas */
+.oculto {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 20px #fff;
+    width: 90%;
+    align-items: center;
+    position: relative;
+    visibility: visible;
+}
+
+/* se muestra las Habilidades blandas en columna y 
+ocultas inicialmente */
+.oculto .habilidadesOcultas{
+    padding-top: 20px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-left: 30px;
+    text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* estilo contenedor para las barras */
 .barra {
     background: #959595;
     width: 400px;
     height: 8px;
     border-radius: 10px;
 }
-
+/* estilo contenedor de la barra a pintar */
 .barra div {
     height: 8px;
     border-radius: 10px;
     width: 0%;
 }
 
+/* estilo del circulo guia del porcentaje */
 .barra div span {
     height: 35px;
     width: 35px;
@@ -515,9 +639,15 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     color: #fcf8f8;
 }
 
+/* se asigna color a la linea y animacion */
 .html {
     background: #e91e63;
     animation: html 1s linear forwards;
+}
+
+.equipo {
+    background: #e91e63;
+    animation: trabajo 1s linear forwards;
 }
 
 .css {
@@ -525,9 +655,19 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     animation: css 1s linear forwards;
 }
 
+.responsabilidad {
+    background: #cddc39;
+    animation: responsabilidad 1s linear forwards;
+}
+
 .javascript {
     background: #00bcd4;
     animation: javascript 1s linear forwards;
+}
+
+.comunicacion {
+    background: #00bcd4;
+    animation: comunicacion 1s linear forwards;
 }
 
 .java {
@@ -535,9 +675,19 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     animation: java 1s linear forwards;
 }
 
+.persistencia {
+    background: #ffeb3b;
+    animation: persistencia 1s linear forwards;
+}
+
 .python {
     background: #9c27b0;
     animation: python 1s linear forwards;
+}
+
+.tiempo {
+    background: #9c27b0;
+    animation: tiempo 1s linear forwards;
 }
 
 .springboot {
@@ -545,40 +695,57 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     animation: springboot 1s linear forwards;
 }
 
+.detalle {
+    background: #ff3bc4;
+    animation: detalle 1s linear forwards;
+}
+
 .sql {
     background: #3fe61e;
     animation: sql 1s linear forwards;
 }
 
+.adaptabilidad {
+    background: #3fe61e;
+    animation: adaptabilidad 1s linear forwards;
+}
 
 
 
-.html span {
+/* se le asigna borde de color al circulo */
+.html span,
+.equipo span {
     border: 1px ridge #e91e63;
 }
 
-.css span {
+.css span,
+.responsabilidad span {
     border: 1px ridge #cddc39;
 }
-.javascript span {
+.javascript span,
+.comunicacion span {
     border: 1px ridge #00bcd4;
 }
-.java span {
+.java span,
+.persistencia span {
     border: 1px ridge #ffeb3b;
 }
-.python span {
+.python span,
+.tiempo span {
     border: 1px ridge #9c27b0;
 }
 
-.springboot span {
+.springboot span,
+.detalle span {
     border: 1px ridge #ff3bc4;
 }
-.sql span {
+.sql span,
+.adaptabilidad span {
     border: 1px ridge #3fe61e;
 }
 
 
-
+/* animacion para cada barra determina hasta donde va */
 @keyframes html {
     100%{
         width: 89%;
@@ -619,4 +786,280 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     100%{
         width: 70%;
     }
+}
+
+@keyframes trabajo {
+    100%{
+        width: 90%;
+    }
+}
+
+@keyframes responsabilidad {
+    100%{
+        width: 95%;
+    }
+}
+
+@keyframes comunicacion {
+    100%{
+        width: 89%;
+    }
+}
+
+@keyframes persistencia {
+    100%{
+        width: 98%;
+    }
+}
+
+@keyframes tiempo {
+    100%{
+        width: 80%;
+    }
+}
+
+@keyframes detalle {
+    100%{
+        width: 80%;
+    }
+}
+
+@keyframes adaptabilidad {
+    100%{
+        width: 80%;
+    }
+}
+
+
+/* relaciono un tamaño al contenedor */
+.btnLado {
+    width: 50px;
+    height: 50px;
+    padding-left: 90px;
+}
+/* relaciona un tamaño a la imagen y posicion y color*/
+.btnLado img {
+    width: 50px;
+    position: absolute;
+    right: 20px;
+    bottom: 2px;
+    filter: invert();
+    transition: 3s ease;
+    cursor: pointer;
+    z-index: 3;
+}
+/* rota en direccion de las manecillas del reloj */
+.btnLado img:hover {
+    transform: rotate(720deg);
+}
+
+/* relaciono un fondo al texto en degrade
+y una animacion lineal un inicio y fin de animacion
+asociada al view port */
+.masSobreMi,
+.sobreMi,
+.ocultoD,
+.ocultoI,
+.ocultoD2,
+.misH {
+    display: inline;
+    color: rgba(51, 50, 50, 0.2);
+    background-image: linear-gradient(90deg, rgb(252, 250, 250), rgb(157, 157, 250));
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    animation: revelarText 2s linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover 30vh;
+    animation-range-end: cover 70vh;
+}
+
+/* animacion para el texto  */
+@keyframes revelarText {
+    to{
+        background-size: 100% 100%;
+    }
+}
+
+.contenedorFormulario {
+    display: grid;
+    grid-template-columns: 400px 300px;
+    grid-template-rows: 10% 90%;
+    width: 700px;
+    /* height: 565px; */
+    padding-top: 50px;
+    margin: auto;
+}
+
+.con {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 32px;
+    text-align: center;
+}
+
+.con span{
+    color: rgb(121, 21, 21);
+}
+
+.formulario {
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 400px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px 0 0 20px;
+    border-top: 1px ridge rgba(255, 255, 255, 0.555);
+    border-left: 1px ridge rgba(255, 255, 255, 0.555);
+    border-bottom: 1px ridge rgba(255, 255, 255, 0.555);
+}
+
+.enlaces {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    /* background-color: rgb(19, 18, 18); */
+    background-image: url("../img/sky-night-star-cosmos-atmosphere-darkness-785598-pxhere.com.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border-radius: 0 20px 20px 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    align-items: center;
+    border-top: 1px ridge rgba(255, 255, 255, 0.555);
+    border-right: 1px ridge rgba(255, 255, 255, 0.555);
+    border-bottom: 1px ridge rgba(255, 255, 255, 0.555);  
+}
+
+.formulario form .verMas{
+    margin-left: 100px;
+
+}
+
+.enlaces .verMas {
+    width: 150px;
+}
+
+.enlaces #imgC{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 50px;
+    width: 170px;
+    filter: drop-shadow(5px 3px 5px rgb(121, 121, 182));
+    justify-self: center;
+}
+
+.linksC {
+    background-color: rgba(255, 255, 255, 0.123);
+    margin-inline: 30px;
+    border-radius: 10px;
+    padding-block: 5px;
+    justify-items: center;
+}
+
+.enlaces .linksC {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.enlaces .iconC{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 50px;
+    border-radius: 20px;
+    
+    transition: scale 0.25s ease-in,
+                opacity 0.25s ease-in,
+                filter 0.25s ease-in;
+    &:hover {
+        scale: 1.2s;
+    }
+}
+
+.enlaces:has(.iconC:hover) .iconC:not(:hover){
+scale: 0.8;
+opacity: 0.8;
+filter: blur(4px);
+}
+
+
+.formulario input, 
+.formulario textarea{
+    background: none;
+    border: 1px ridge black;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 90%;
+    margin: 15px;
+    transition: border 500ms;
+}
+
+.formulario textarea{
+    padding-top: 10px;
+}
+
+.formulario input{
+    padding-block: 10px;
+    margin-bottom: 20px;
+}
+
+
+.formulario input:hover, 
+.formulario textarea:hover {
+    border: 1px ridge rgb(161, 160, 160);
+}
+
+footer{
+    margin-top: 60px;
+    padding: 20px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer .der .uno{
+    width: 98%;
+    height: 10px;
+    background-color: #333;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    margin-inline: auto;
+}
+
+footer .der .dos{
+    width: 80%;
+    height: 10px;
+    padding-inline: 2px;
+    background-color: #333;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    margin-inline: auto;
+}
+
+footer .der .tres{
+    width: 60%;
+    height: 10px;
+    padding-inline: 2px;
+    background-color: #333;
+    border-radius: 20px;
+    margin-inline: auto;
+}
+
+footer .centro {
+    background-color:#333;
+    text-align: center;
+    border-radius: 10px;
+    align-content: center;
+    padding-block: 10px;
 }

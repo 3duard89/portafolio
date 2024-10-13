@@ -13,22 +13,45 @@ window.addEventListener('scroll', function() {
 document.addEventListener("scroll", function(){
     const luna = document.getElementById("luna");
     let posicionScroll = window.scrollY;
-    let ejeY = Math.min(posicionScroll * 2, 250);
-    let ejeX = Math.min(posicionScroll * 2, 250);
+    let ejeY = Math.min(posicionScroll * 2, 300);
+    let ejeX = Math.min(posicionScroll * 2, 300);
 
-    luna.style.transform = `translate(-${ejeX}px, ${ejeY}px)`;
+    luna.style.transform = `translate(${ejeX}px, ${ejeY}px)`;
+});
+
+
+document.addEventListener("scroll", function(){
+    const frente = document.getElementById("frente");
+    let posicionScroll = window.scrollY;
+    let ejeY = Math.min(posicionScroll * 0.1, 200);
+
+    frente.style.transform = `translateY(-${ejeY}px)`;
+});
+
+document.addEventListener("scroll", function(){
+    const medio = document.getElementById("medio");
+    let posicionScroll = window.scrollY;
+    let ejeY = Math.min(posicionScroll * 0.3, 200);
+
+    medio.style.transform = `translateY(${ejeY}px)`;
 });
 
 
 
+document.addEventListener("scroll", function(){
+    const bienvenida = document.getElementById("bienvenida");
+    let posicionScroll = window.scrollY;
+    let ejeY = Math.min(posicionScroll * 2, 350);
 
+    bienvenida.style.transform = `translateY(-${ejeY}px)`;
+});
 
 
 window.addEventListener('scroll', function() {
     const background = document.getElementById('banner-inicial');
     const scrollPosition = window.scrollY;
 
-    const maxScroll = 500; // Ajusta este valor según cuándo quieres que la imagen sea completamente transparente
+    const maxScroll = 400; // Ajusta este valor según cuándo quieres que la imagen sea completamente transparente
     const opacity = Math.max(1 - (scrollPosition / maxScroll), 0); // Asegura que no baje de 0
     background.style.opacity = opacity;
 
@@ -60,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }, 50); // Interval duration of 50 milliseconds
             });
     }
+
 
     //iterar sobre cada proyecto
     proyectos.forEach(function(proyecto){
@@ -114,19 +138,77 @@ btnVolver.addEventListener("click", function() {
     const card = document.getElementById("card");
     const masSobreMi = document.getElementById("masSobreMi");
 
-    // Fade out new section
+    // ocultamos
     masSobreMi.style.opacity = "0";
 
-    // Wait for the fade-out to complete before changing visibility
     setTimeout(() => {
         masSobreMi.style.visibility = "hidden";
 
-        // Show the original section
         sobreMi.style.visibility = "visible";
         card.style.visibility = "visible";
 
-        // Fade in the original section
         sobreMi.style.opacity = "1";
         card.style.opacity = "1";
     }, 500);
+});
+
+
+const btnHabilidades = document.querySelector(".btnLado");
+let banderaCambio = 0;
+
+btnHabilidades.addEventListener("click", function (){
+    const divTecnico = document.querySelector(".habi");
+    const divBlandas = document.querySelector(".habilidadesOcultas");
+
+    if (banderaCambio == 0){
+        divTecnico.style.opacity = 0;
+
+        setTimeout(() => {
+            divTecnico.style.visibility = "hidden";
+    
+            divBlandas.style.visibility = "visible";
+            divBlandas.style.opacity = "1";
+        }, 500);
+        banderaCambio = 1;
+    }else{
+        divBlandas.style.opacity = 0;
+
+        setTimeout(() => {
+            divBlandas.style.visibility = "hidden";
+    
+            divTecnico.style.visibility = "visible";
+            divTecnico.style.opacity = "1";
+        }, 500);
+        banderaCambio = 0;
+    }
+});
+
+
+const btnHabilidad = document.querySelector("#btnhabilidad");
+
+btnHabilidad.addEventListener("click", function (){
+    const divTecnico = document.querySelector(".habi");
+    const divBlandas = document.querySelector(".habilidadesOcultas");
+
+    if (banderaCambio == 0){
+        divTecnico.style.opacity = 0;
+
+        setTimeout(() => {
+            divTecnico.style.visibility = "hidden";
+    
+            divBlandas.style.visibility = "visible";
+            divBlandas.style.opacity = "1";
+        }, 500);
+        banderaCambio = 1;
+    }else{
+        divBlandas.style.opacity = 0;
+
+        setTimeout(() => {
+            divBlandas.style.visibility = "hidden";
+    
+            divTecnico.style.visibility = "visible";
+            divTecnico.style.opacity = "1";
+        }, 500);
+        banderaCambio = 0;
+    }
 });
