@@ -34,7 +34,7 @@ body{
 .navbar {
     width: 100%;
     height: 80px;
-    background-color: rgba(0, 0, 0, 0.466);
+    background-color: rgba(0, 0, 0, 0.5);
     font-size: 18px;
     letter-spacing: 0.6px;
     display: flex;
@@ -52,8 +52,29 @@ body{
     backdrop-filter: blur(6px); /* Efecto de blur al hacer scroll */
 }
 
+/*alineado logo y nombre  */
 .navbar-nombre {
     padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-nombre a{
+    text-decoration: none;
+    color: #5545eb;
+}
+
+/* centrado para logo y nombre */
+.navbar-nombre .nombreSD{
+    margin-block: auto;
+}
+
+.navbar-nombre .nombreSD  .titleName{
+    font-size: 22px;
+}
+
+.navbar-nombre .nombreSD .sloganName{
+    font-size: 12px;
 }
 
 /* tamaño logo */
@@ -233,6 +254,7 @@ body{
 
 .proyectos h1{
     font-size: 28px;
+    margin-bottom: 15px;
 }
 
 /* sobreMi transicion */
@@ -308,7 +330,18 @@ body{
     place-content: center;
     text-align: center;
     font-size: 34px;
+    overflow: hidden;
+    
 }
+
+.tituloContactame p span,
+.tituloHabilidades p span,
+.tituloProyecto p span,
+.tituloSobreMi p span{
+    transition: 1.5s;
+    cursor: pointer;
+}
+
 
 
 /* estilos contenedor de proyectos filas y columnas */
@@ -349,8 +382,8 @@ body{
 
 /* capa de transparencia fija del tamaño de la imagen */
 .proyectos .capa {
-    width: 100%;
-    height: 100%;
+    width: 97%;
+    height: 94%;
     background-color: rgba(19, 19, 19, 0.3);
     position: fixed;
     top: 0;
@@ -470,7 +503,7 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
 .ocultoI,
 .ocultoD2 {
     align-self: center;
-    font-size: 22px;
+    font-size: 20px;
     color: #f5eee6;
 }
 
@@ -496,6 +529,7 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.253);
 
 }
+
 
 /* adaptando a imagne seguido de su descripcion */
 @media (width < 800px){
@@ -1063,3 +1097,4 @@ footer .centro {
     align-content: center;
     padding-block: 10px;
 }
+

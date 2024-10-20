@@ -212,3 +212,46 @@ btnHabilidad.addEventListener("click", function (){
         banderaCambio = 0;
     }
 });
+
+
+/* aplicaremos estilos a los titulos estos se desvaneceran al pasar el mouse */
+let contenedorTituloSobreMi = document.querySelector(".sobreMiTitulo");
+let contenedorTitulosProyectos = document.querySelector(".proyectosTitulo");
+let contenedorTitulosHabilidades = document.querySelector(".habilidades");
+let contenedorTitulosContactame = document.querySelector(".contactame");
+
+
+/* se le pasa un nodo que esta enlazado al titulo de cada seccion
+ira iterando sobre cada span(letra) y pasado 1.5s volvera a su estado inicial */
+
+const aplicarEfectoATitulos = (contenedor) => {
+
+    let text = contenedor.querySelectorAll("p > span");
+    let iterador = 0;
+    const aplicarEfecto = () => {
+        if (iterador < text.length){
+            text[iterador].style.transform = "scale(2)";
+            text[iterador].style.opacity = "0";
+            text[iterador].style.filter = "blur(20px)";
+            iterador++;
+            setTimeout(aplicarEfecto,150);
+        }else {
+
+            setTimeout(() => {
+                text.forEach(span => {
+                    span.style.transform = "scale(1)";
+                    span.style.opacity = "1";
+                    span.style.filter = "blur(0)";
+                });
+            },1500);
+        }
+    };
+    aplicarEfecto();
+};
+
+contenedorTituloSobreMi.addEventListener("mouseover", () => aplicarEfectoATitulos(contenedorTituloSobreMi));
+contenedorTitulosProyectos.addEventListener("mouseover", () => aplicarEfectoATitulos(contenedorTitulosProyectos));
+contenedorTitulosHabilidades.addEventListener("mouseover", () => aplicarEfectoATitulos(contenedorTitulosHabilidades));
+contenedorTitulosContactame.addEventListener("mouseover", () => aplicarEfectoATitulos(contenedorTitulosContactame));
+
+
