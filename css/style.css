@@ -350,7 +350,7 @@ body{
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 45% 45%;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 50px;
     padding: 40px 40px;
 }
@@ -380,6 +380,10 @@ body{
     grid-column: 1/2;
 }
 
+.proyectoD2 {
+    grid-row: 4/5;
+    grid-column: 2/3;
+}
 /* capa de transparencia fija del tamaño de la imagen */
 .proyectos .capa {
     width: 97%;
@@ -501,6 +505,7 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
 /* estilos para los textos descriptivos de las imagenes */
 .ocultoD,
 .ocultoI,
+.ocultoI2,
 .ocultoD2 {
     align-self: center;
     font-size: 20px;
@@ -508,12 +513,14 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
 }
 
 /* alineacion derecha el texto */
-.ocultoI {
+.ocultoI,
+.ocultoI2 {
     text-align: right;
 }
 
 /* estilos botones proyectos lado izquierdo */
-.ocultoI .verMas{
+.ocultoI .verMas,
+.ocultoI2 .verMas{
     font-size: 22px;
     background: rgba(255, 255, 255, 0.082);
     color: white;
@@ -538,7 +545,8 @@ para arriba que para abajo, de esta manera se quita un bug de salto imagen */
         display: flex;
         flex-wrap: wrap;
     }
-    .ocultoI {
+    .ocultoI,
+    .ocultoI2 {
         text-align: left;
     }
 
@@ -894,6 +902,7 @@ asociada al view port */
 .sobreMi,
 .ocultoD,
 .ocultoI,
+.ocultoI2,
 .ocultoD2,
 .misH {
     display: inline;
